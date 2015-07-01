@@ -1,0 +1,13 @@
+{
+  "name": "AjaxControl",
+  "version": "0.1.0",
+  "description": "Clase para gestionar las peticiones ajax de una aplicación",
+  "keywords": ["jquery-plugin", "Ajax", "REST"],
+  "author": {
+    "name": "Javier Ruiz",
+    "email": "javierruiztrillo@gmail.com",
+    "url": "https://github.com/javier-ruiz-trillo"
+  },
+  "repository": "javier-ruiz-trillo/ajaxControl",
+  "license": "MIT"
+}
