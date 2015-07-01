@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Ajax Control Example</title>
+</head>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="AjaxControl.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var url = "content.html"
+		var datosResp = AjaxControl.cargarAjax("GET",url).complete(function(data) {
+			if(XMLHttpRequest == "error"){
+				alert("Ha ocurrido un error")
+			}else{
+				var response = data.responseText;;
+				$(".wrapper").append(response);
+			}
+		})
+	})
+</script>
+<body>
+	<div class="wrapper">
+	</div>
+</body>
+</html>
