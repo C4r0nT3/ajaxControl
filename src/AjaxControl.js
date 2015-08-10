@@ -1,20 +1,21 @@
 $.ajaxSetup({
+	timeout:8000,
 	error: function(jqXHR, exception) {
 		if (jqXHR.status === 0) {
 			alert('Not connect.\n Verify Network.');
 		} else if (jqXHR.status == 403) {
-			url = "403.html";
+			url = '403.html';
 			window.location.href = url;
 		} else if (jqXHR.status == 404) {
-			url = "404.html";
+			url = '404.html';
 			window.location.href = url;
 		} else if (jqXHR.status == 500) {
 			alert('Internal Server Error [500].');
 		} else if(jqXHR.status == 401){
-			url = "#login";
-			window.location.href = url;			
+			url = '#login';
+			window.location.href = url;
 		}else if(jqXHR.status == 408){
-			url = "#portada";
+			url = '#portada';
 			window.location.href = url;
 		}else if(jqXHR.status == 200){
 			console.log(jqXHR);
@@ -33,9 +34,9 @@ $.ajaxSetup({
 		}
 	},
 	complete:function(XMLHttpRequest, textStatus){
-		
+
 	}
-	
+
 	/*
 	Cross-Domain
 	,
@@ -57,7 +58,7 @@ var AjaxControl = {
 			url: URL,
 			beforeSend: function (xhr) {
 				//En caso de que sea necesaria autentificación
-   			 	xhr.setRequestHeader ("Authorization", "Bearer "+ cabecera);
+   			 	xhr.setRequestHeader ('Authorization', 'Bearer '+ cabecera);
 			 }
 		})
 	},
@@ -73,7 +74,7 @@ var AjaxControl = {
 			url: URL,
 			beforeSend: function (xhr) {
    				//Obetener el Token en caso de que la autorización sea OAuth
-   				xhr.setRequestHeader ("Authorization", "Basic NTU3OTM4OWJlMzc3ZWQyOTBiMGQ1NTNlOlVMREI2NjRz");
+   				xhr.setRequestHeader ('Authorization', 'Basic NTU3OTM4OWJlMzc3ZWQyOTBiMGQ1NTNlOlVMREI2NjRz');
 			}
 		})
 	},
@@ -91,7 +92,7 @@ var AjaxControl = {
 		if(typeof(process)==='undefined') process = true;
 		return $.ajax({
 			contentType: content,
-			//mimeType: 'application/json',	
+			//mimeType: 'application/json',
 			processData: process,
 			cache:false,
 			crossDomain: true,
@@ -100,9 +101,9 @@ var AjaxControl = {
 				//Upload progress
 				xhr.upload.addEventListener("progress", function(evt){
 					if (evt.lengthComputable) {
-						$(".tapa_preload_adjunto").removeClass("oculto");
+						$('.tapa_preload_adjunto').removeClass("oculto");
 						var percentComplete = evt.loaded / evt.total;
-						$(".tapa_preload_adjunto .progress-bar").attr("style","width:"+(percentComplete*100)+"%");
+						$('.tapa_preload_adjunto .progress-bar').attr('style','width:'+(percentComplete*100)+"%");
 					}
 				}, false);
 				//Download progress
