@@ -1,4 +1,5 @@
 $.ajaxSetup({
+	timeout:8000,
 	error: function(jqXHR, exception) {
 		if (jqXHR.status === 0) {
 			alert('Not connect.\n Verify Network.');
@@ -12,7 +13,7 @@ $.ajaxSetup({
 			alert('Internal Server Error [500].');
 		} else if(jqXHR.status == 401){
 			url = "#login";
-			window.location.href = url;			
+			window.location.href = url;
 		}else if(jqXHR.status == 408){
 			url = "#portada";
 			window.location.href = url;
@@ -33,9 +34,9 @@ $.ajaxSetup({
 		}
 	},
 	complete:function(XMLHttpRequest, textStatus){
-		
+
 	}
-	
+
 	/*
 	Cross-Domain
 	,
@@ -91,7 +92,7 @@ var AjaxControl = {
 		if(typeof(process)==='undefined') process = true;
 		return $.ajax({
 			contentType: content,
-			//mimeType: 'application/json',	
+			//mimeType: 'application/json',
 			processData: process,
 			cache:false,
 			crossDomain: true,
